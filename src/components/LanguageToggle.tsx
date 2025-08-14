@@ -19,9 +19,12 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ currentLanguage, onLang
         />
         
         {/* Toggle buttons */}
-        <div className="relative flex">
+        <div className="relative flex z-20">{/* Make sure buttons are on top */}
           <button
-            onClick={() => onLanguageChange('en')}
+            onClick={() => {
+              console.log('EN button clicked');
+              onLanguageChange('en');
+            }}
             className={`relative flex items-center justify-center px-4 py-2 rounded-xl transition-all duration-300 ease-out hover:scale-105 ${
               currentLanguage === 'en'
                 ? 'text-white font-semibold z-10'
@@ -35,7 +38,10 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ currentLanguage, onLang
           </button>
           
           <button
-            onClick={() => onLanguageChange('bn')}
+            onClick={() => {
+              console.log('BN button clicked');
+              onLanguageChange('bn');
+            }}
             className={`relative flex items-center justify-center px-4 py-2 rounded-xl transition-all duration-300 ease-out hover:scale-105 ${
               currentLanguage === 'bn'
                 ? 'text-white font-semibold z-10'
@@ -50,7 +56,7 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ currentLanguage, onLang
         </div>
         
         {/* Glow effect */}
-        <div className={`absolute inset-0 rounded-2xl transition-opacity duration-500 ${
+        <div className={`absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none z-0 ${
           currentLanguage === 'en' || currentLanguage === 'bn' ? 'animate-glow opacity-50' : 'opacity-0'
         }`} />
       </div>
