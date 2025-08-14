@@ -581,16 +581,16 @@ const Index = () => {
                 <ScrollReveal delay={400}>
                   <div className="w-full order-1 xl:order-2">
                     <Card className="gradient-card shadow-card">
-                      <CardContent className="p-4 sm:p-6 lg:p-8">
-                        <h3 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6 text-gradient">
+                      <CardContent className="p-3 sm:p-6 lg:p-8">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-4 sm:mb-6 text-gradient">
                           Send us a Message
                         </h3>
-                        <form action="https://formspree.io/f/mdkdjdwn" method="POST" className="space-y-4 sm:space-y-6">
+                        <form action="https://formspree.io/f/mdkdjdwn" method="POST" className="space-y-3 sm:space-y-6">
                           
                           {/* Name and Email Row */}
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
                             <div>
-                              <label htmlFor="name" className="block text-sm font-medium mb-2">
+                              <label htmlFor="name" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                                 Name *
                               </label>
                               <input
@@ -598,12 +598,12 @@ const Index = () => {
                                 id="name"
                                 name="name"
                                 required
-                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
+                                className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm sm:text-base"
                                 placeholder="Your full name"
                               />
                             </div>
                             <div>
-                              <label htmlFor="email" className="block text-sm font-medium mb-2">
+                              <label htmlFor="email" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                                 Email *
                               </label>
                               <input
@@ -611,7 +611,7 @@ const Index = () => {
                                 id="email"
                                 name="email"
                                 required
-                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
+                                className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm sm:text-base"
                                 placeholder="your.email@example.com"
                               />
                             </div>
@@ -619,7 +619,7 @@ const Index = () => {
 
                           {/* Subject */}
                           <div>
-                            <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                            <label htmlFor="subject" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                               Subject *
                             </label>
                             <input
@@ -627,31 +627,31 @@ const Index = () => {
                               id="subject"
                               name="subject"
                               required
-                              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
+                              className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm sm:text-base"
                               placeholder="Subject of your message"
                             />
                           </div>
 
                           {/* Message */}
                           <div>
-                            <label htmlFor="message" className="block text-sm font-medium mb-2">
+                            <label htmlFor="message" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                               Message *
                             </label>
                             <textarea
                               id="message"
                               name="message"
-                              rows={4}
-                              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none text-sm min-h-[100px] sm:min-h-[120px]"
+                              rows={3}
+                              className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none text-sm sm:text-base min-h-[80px] sm:min-h-[120px]"
                               placeholder="Your message here..."
                               required
                             ></textarea>
                           </div>
 
                           {/* Submit Button */}
-                          <div className="text-center pt-2">
+                          <div className="text-center pt-1 sm:pt-2">
                             <Button
                               type="submit"
-                              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-colors shadow-elegant text-sm sm:text-base"
+                              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 sm:py-3.5 rounded-lg font-medium transition-colors shadow-elegant text-sm sm:text-base"
                             >
                               Send Message
                             </Button>
