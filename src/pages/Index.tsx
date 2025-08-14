@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import DarkModeToggle from '@/components/DarkModeToggle';
-import LanguageToggle from '@/components/LanguageToggle';
+import Navigation from '@/components/Navigation';
 import ScrollReveal from '@/components/ScrollReveal';
 import { content } from '@/data/content';
 import cyberSecurityLogo from '@/assets/cyber-security-logo.png';
 import hitCampus from '@/assets/hit-campus.jpg';
-import { Calendar, MapPin, Users, Mail, Phone, Clock, User, Award, BookOpen } from 'lucide-react';
+import speaker1 from '@/assets/speaker-1.jpg';
+import speaker2 from '@/assets/speaker-2.jpg';
+import speaker3 from '@/assets/speaker-3.jpg';
+import speaker4 from '@/assets/speaker-4.jpg';
+import { Calendar, MapPin, Users, Mail, Phone, Clock, User, Award, BookOpen, Star, Zap, Shield } from 'lucide-react';
 
 const Index = () => {
   const [language, setLanguage] = useState<'en' | 'bn'>('en');
@@ -18,126 +21,184 @@ const Index = () => {
     setLanguage(lang);
   };
 
+  const speakerImages = [speaker1, speaker2, speaker3, speaker4];
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 gradient-hero shadow-elegant">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <img src={cyberSecurityLogo} alt="Cyber Security Logo" className="h-12 w-12" />
-              <div className="text-white">
-                <h1 className="text-xl font-bold">HIT Seminar 2025</h1>
-                <p className="text-sm opacity-90">Cyber Physical Systems</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <LanguageToggle currentLanguage={language} onLanguageChange={handleLanguageChange} />
-              <DarkModeToggle />
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Navigation */}
+      <Navigation language={language} onLanguageChange={handleLanguageChange} />
 
       {/* Hero Section */}
-      <section className="gradient-hero py-20 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                {currentContent.title}
-              </h1>
-              <p className="text-xl md:text-2xl mb-4 opacity-90">
-                {currentContent.subtitle}
-              </p>
-              <p className="text-lg mb-8 opacity-80">
-                {currentContent.organizedBy}
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  10-11 September 2025
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Haldia Institute of Technology
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Users className="w-4 h-4 mr-2" />
-                  Free Registration
-                </Badge>
+      <section id="home" className="section-full gradient-hero text-white pt-20">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
+            <ScrollReveal direction="left">
+              <div className="space-y-8">
+                {/* College Logos */}
+                <div className="flex items-center space-x-6 mb-8">
+                  <img 
+                    src={cyberSecurityLogo} 
+                    alt="Cyber Security Logo" 
+                    className="h-16 w-16 animate-float hover-lift" 
+                  />
+                  <img 
+                    src={cyberSecurityLogo} 
+                    alt="HIT Logo" 
+                    className="h-16 w-16 animate-float hover-lift" 
+                    style={{ animationDelay: '0.5s' }}
+                  />
+                </div>
+
+                <div className="space-y-6">
+                  <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gradient">
+                    {currentContent.title}
+                  </h1>
+                  <p className="text-xl md:text-2xl opacity-90">
+                    {currentContent.subtitle}
+                  </p>
+                  <p className="text-lg opacity-80">
+                    {currentContent.organizedBy}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  <Badge variant="secondary" className="px-4 py-3 glass-morphism hover-lift">
+                    <Calendar className="w-5 h-5 mr-2" />
+                    10-11 September 2025
+                  </Badge>
+                  <Badge variant="secondary" className="px-4 py-3 glass-morphism hover-lift">
+                    <MapPin className="w-5 h-5 mr-2" />
+                    Haldia Institute of Technology
+                  </Badge>
+                  <Badge variant="secondary" className="px-4 py-3 glass-morphism hover-lift">
+                    <Users className="w-5 h-5 mr-2" />
+                    Free Registration
+                  </Badge>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Button
+                    className="bg-white text-primary hover:bg-white/90 transition-smooth shadow-elegant animate-glow"
+                    onClick={() => window.open('https://ataicademy.aicte.gov.in/signup', '_blank')}
+                  >
+                    {language === 'en' ? 'Register Now' : 'এখনই নিবন্ধন করুন'}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-primary transition-smooth"
+                    onClick={() => document.querySelector('#schedule')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    {language === 'en' ? 'View Schedule' : 'সময়সূচি দেখুন'}
+                  </Button>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+
+            {/* Right Side - College Image */}
+            <ScrollReveal direction="right">
+              <div className="relative">
+                <div className="relative overflow-hidden rounded-2xl shadow-elegant hover-lift">
+                  <img 
+                    src={hitCampus} 
+                    alt="HIT Campus" 
+                    className="w-full h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Haldia Institute of Technology
+                    </h3>
+                    <p className="text-white/80">
+                      Leading Technical Education Excellence
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Floating elements */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-white/10 rounded-full animate-float glass-morphism flex items-center justify-center">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-white/10 rounded-full animate-float glass-morphism flex items-center justify-center" style={{ animationDelay: '1s' }}>
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Campus Image */}
-      <ScrollReveal>
-        <div className="w-full h-64 md:h-96 relative overflow-hidden">
-          <img 
-            src={hitCampus} 
-            alt="HIT Campus" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/20"></div>
-        </div>
-      </ScrollReveal>
-
       {/* Organizers Section */}
-      <section className="py-16 gradient-section">
+      <section id="organizers" className="section-full gradient-section">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              {language === 'en' ? 'Organizers & Leadership' : 'আয়োজক ও নেতৃত্ব'}
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+                {language === 'en' ? 'Organizers & Leadership' : 'আয়োজক ও নেতৃত্ব'}
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                {language === 'en' 
+                  ? 'Meet the distinguished leaders and organizers behind this prestigious seminar'
+                  : 'এই মর্যাদাপূর্ণ সেমিনারের পিছনে বিশিষ্ট নেতৃবৃন্দ ও আয়োজকদের সাথে পরিচিত হন'
+                }
+              </p>
+            </div>
           </ScrollReveal>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Chief Patron */}
             <ScrollReveal direction="left" delay={100}>
-              <Card className="gradient-card shadow-card hover:shadow-elegant transition-smooth">
-                <CardContent className="p-6 text-center">
-                  <Award className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-primary mb-2">
-                    {currentContent.chiefPatron.title}
-                  </h3>
-                  <h4 className="font-semibold mb-2">{currentContent.chiefPatron.name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {currentContent.chiefPatron.designation}
-                  </p>
+              <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                <CardContent className="p-8 text-center relative overflow-hidden">
+                  <div className="relative z-10">
+                    <Award className="w-16 h-16 text-primary mx-auto mb-6 animate-float" />
+                    <h3 className="text-xl font-bold text-primary mb-3">
+                      {currentContent.chiefPatron.title}
+                    </h3>
+                    <h4 className="font-bold mb-3 text-lg">{currentContent.chiefPatron.name}</h4>
+                    <p className="text-muted-foreground">
+                      {currentContent.chiefPatron.designation}
+                    </p>
+                  </div>
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full -translate-y-10 translate-x-10 transition-transform group-hover:scale-150"></div>
                 </CardContent>
               </Card>
             </ScrollReveal>
 
             {/* Coordinator */}
             <ScrollReveal direction="up" delay={200}>
-              <Card className="gradient-card shadow-card hover:shadow-elegant transition-smooth">
-                <CardContent className="p-6 text-center">
-                  <User className="w-12 h-12 text-accent mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-accent mb-2">
-                    {currentContent.coordinator.title}
-                  </h3>
-                  <h4 className="font-semibold mb-2">{currentContent.coordinator.name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {currentContent.coordinator.designation}
-                  </p>
+              <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                <CardContent className="p-8 text-center relative overflow-hidden">
+                  <div className="relative z-10">
+                    <User className="w-16 h-16 text-accent mx-auto mb-6 animate-float" style={{ animationDelay: '0.5s' }} />
+                    <h3 className="text-xl font-bold text-accent mb-3">
+                      {currentContent.coordinator.title}
+                    </h3>
+                    <h4 className="font-bold mb-3 text-lg">{currentContent.coordinator.name}</h4>
+                    <p className="text-muted-foreground">
+                      {currentContent.coordinator.designation}
+                    </p>
+                  </div>
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-full -translate-y-10 translate-x-10 transition-transform group-hover:scale-150"></div>
                 </CardContent>
               </Card>
             </ScrollReveal>
 
             {/* Co-Coordinator */}
             <ScrollReveal direction="right" delay={300}>
-              <Card className="gradient-card shadow-card hover:shadow-elegant transition-smooth">
-                <CardContent className="p-6 text-center">
-                  <User className="w-12 h-12 text-accent mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-accent mb-2">
-                    {currentContent.coCoordinator.title}
-                  </h3>
-                  <h4 className="font-semibold mb-2">{currentContent.coCoordinator.name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {currentContent.coCoordinator.designation}
-                  </p>
+              <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                <CardContent className="p-8 text-center relative overflow-hidden">
+                  <div className="relative z-10">
+                    <User className="w-16 h-16 text-accent mx-auto mb-6 animate-float" style={{ animationDelay: '1s' }} />
+                    <h3 className="text-xl font-bold text-accent mb-3">
+                      {currentContent.coCoordinator.title}
+                    </h3>
+                    <h4 className="font-bold mb-3 text-lg">{currentContent.coCoordinator.name}</h4>
+                    <p className="text-muted-foreground">
+                      {currentContent.coCoordinator.designation}
+                    </p>
+                  </div>
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-accent/10 rounded-full -translate-y-10 translate-x-10 transition-transform group-hover:scale-150"></div>
                 </CardContent>
               </Card>
             </ScrollReveal>
@@ -145,17 +206,21 @@ const Index = () => {
 
           {/* Patrons */}
           <ScrollReveal delay={400}>
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-center mb-8 text-primary">
+            <div className="mt-16">
+              <h3 className="text-3xl font-bold text-center mb-12 text-gradient">
                 {currentContent.patrons.title}
               </h3>
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {currentContent.patrons.list.map((patron, index) => (
                   <ScrollReveal key={index} direction={index % 2 === 0 ? 'left' : 'right'} delay={500 + index * 100}>
-                    <Card className="gradient-card shadow-card">
-                      <CardContent className="p-4">
-                        <h4 className="font-semibold mb-1">{patron.name}</h4>
-                        <p className="text-sm text-muted-foreground">{patron.designation}</p>
+                    <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                      <CardContent className="p-6 relative overflow-hidden">
+                        <div className="relative z-10">
+                          <Star className="w-8 h-8 text-primary mb-3" />
+                          <h4 className="font-bold mb-2 text-lg">{patron.name}</h4>
+                          <p className="text-muted-foreground">{patron.designation}</p>
+                        </div>
+                        <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-primary/5 rounded-full transition-transform group-hover:scale-150"></div>
                       </CardContent>
                     </Card>
                   </ScrollReveal>
@@ -167,21 +232,49 @@ const Index = () => {
       </section>
 
       {/* Speakers Section */}
-      <section className="py-16 bg-background">
+      <section id="speakers" className="section-full bg-background">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              {currentContent.speakers.title}
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+                {currentContent.speakers.title}
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                {language === 'en' 
+                  ? 'Distinguished experts sharing cutting-edge insights in cybersecurity and technology'
+                  : 'সাইবার নিরাপত্তা ও প্রযুক্তিতে অত্যাধুনিক অন্তর্দৃষ্টি ভাগ করে নিচ্ছেন বিশিষ্ট বিশেষজ্ঞরা'
+                }
+              </p>
+            </div>
           </ScrollReveal>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {currentContent.speakers.list.map((speaker, index) => (
-              <ScrollReveal key={index} direction="scale" delay={100 + index * 50}>
-                <Card className="gradient-card shadow-card hover:shadow-elegant transition-smooth">
-                  <CardContent className="p-4 text-center">
-                    <BookOpen className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <p className="text-sm font-medium">{speaker}</p>
+              <ScrollReveal key={index} direction="scale" delay={100 + index * 100}>
+                <Card className="gradient-card shadow-card hover-lift transition-smooth group overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <img 
+                        src={speakerImages[index % speakerImages.length]} 
+                        alt={speaker}
+                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
+                          <BookOpen className="w-6 h-6 text-primary mb-2" />
+                          <p className="font-medium text-sm text-gray-900">Expert Speaker</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                        {speaker}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {language === 'en' ? 'Technology Expert' : 'প্রযুক্তি বিশেষজ্ঞ'}
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </ScrollReveal>
@@ -191,57 +284,81 @@ const Index = () => {
       </section>
 
       {/* Schedule Section */}
-      <section className="py-16 gradient-section">
+      <section id="schedule" className="section-full gradient-section">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              {currentContent.schedule.title}
-            </h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+                {currentContent.schedule.title}
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                {language === 'en' 
+                  ? 'Comprehensive program schedule for both days of the seminar'
+                  : 'সেমিনারের উভয় দিনের জন্য বিস্তৃত কর্মসূচির সময়সূচি'
+                }
+              </p>
+            </div>
           </ScrollReveal>
           
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Day 1 */}
             <ScrollReveal direction="left">
-              <Card className="gradient-card shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-6 text-primary text-center">
-                    {currentContent.schedule.day1.title}
-                  </h3>
-                  <div className="space-y-4">
-                    {currentContent.schedule.day1.sessions.map((session, index) => (
-                      <div key={index} className="border-l-4 border-primary pl-4 py-2">
-                        <div className="flex items-center mb-2">
-                          <Clock className="w-4 h-4 text-primary mr-2" />
-                          <span className="font-semibold text-sm">{session.time}</span>
-                        </div>
-                        <h4 className="font-medium mb-1">{session.topic}</h4>
-                        <p className="text-sm text-muted-foreground">{session.speaker}</p>
+              <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                <CardContent className="p-8 relative overflow-hidden">
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="bg-primary/10 p-4 rounded-full">
+                        <Calendar className="w-8 h-8 text-primary" />
                       </div>
-                    ))}
+                    </div>
+                    <h3 className="text-3xl font-bold mb-8 text-primary text-center">
+                      {currentContent.schedule.day1.title}
+                    </h3>
+                    <div className="space-y-6">
+                      {currentContent.schedule.day1.sessions.map((session, index) => (
+                        <div key={index} className="border-l-4 border-primary pl-6 py-3 hover:bg-primary/5 rounded-r-lg transition-colors">
+                          <div className="flex items-center mb-3">
+                            <Clock className="w-5 h-5 text-primary mr-3" />
+                            <span className="font-bold text-sm bg-primary text-primary-foreground px-3 py-1 rounded-full">{session.time}</span>
+                          </div>
+                          <h4 className="font-bold mb-2 text-lg">{session.topic}</h4>
+                          <p className="text-muted-foreground">{session.speaker}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full transition-transform group-hover:scale-150"></div>
                 </CardContent>
               </Card>
             </ScrollReveal>
 
             {/* Day 2 */}
             <ScrollReveal direction="right">
-              <Card className="gradient-card shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-6 text-primary text-center">
-                    {currentContent.schedule.day2.title}
-                  </h3>
-                  <div className="space-y-4">
-                    {currentContent.schedule.day2.sessions.map((session, index) => (
-                      <div key={index} className="border-l-4 border-accent pl-4 py-2">
-                        <div className="flex items-center mb-2">
-                          <Clock className="w-4 h-4 text-accent mr-2" />
-                          <span className="font-semibold text-sm">{session.time}</span>
-                        </div>
-                        <h4 className="font-medium mb-1">{session.topic}</h4>
-                        <p className="text-sm text-muted-foreground">{session.speaker}</p>
+              <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                <CardContent className="p-8 relative overflow-hidden">
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-center mb-6">
+                      <div className="bg-accent/10 p-4 rounded-full">
+                        <Calendar className="w-8 h-8 text-accent" />
                       </div>
-                    ))}
+                    </div>
+                    <h3 className="text-3xl font-bold mb-8 text-accent text-center">
+                      {currentContent.schedule.day2.title}
+                    </h3>
+                    <div className="space-y-6">
+                      {currentContent.schedule.day2.sessions.map((session, index) => (
+                        <div key={index} className="border-l-4 border-accent pl-6 py-3 hover:bg-accent/5 rounded-r-lg transition-colors">
+                          <div className="flex items-center mb-3">
+                            <Clock className="w-5 h-5 text-accent mr-3" />
+                            <span className="font-bold text-sm bg-accent text-accent-foreground px-3 py-1 rounded-full">{session.time}</span>
+                          </div>
+                          <h4 className="font-bold mb-2 text-lg">{session.topic}</h4>
+                          <p className="text-muted-foreground">{session.speaker}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 rounded-full transition-transform group-hover:scale-150"></div>
                 </CardContent>
               </Card>
             </ScrollReveal>
@@ -345,27 +462,46 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 gradient-hero text-white">
+      <section id="contact" className="section-full gradient-hero text-white">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <div className="max-w-2xl mx-auto text-center">
-              <h3 className="text-2xl font-bold mb-8">{currentContent.contact.title}</h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-center">
-                  <Mail className="w-5 h-5 mr-3" />
-                  <span className="text-sm">{currentContent.contact.email}</span>
+            <div className="max-w-4xl mx-auto text-center">
+              <h3 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">
+                {currentContent.contact.title}
+              </h3>
+              <p className="text-xl opacity-90 mb-12">
+                {language === 'en' 
+                  ? 'Get in touch with us for more information about the seminar'
+                  : 'সেমিনার সম্পর্কে আরও তথ্যের জন্য আমাদের সাথে যোগাযোগ করুন'
+                }
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <div className="glass-morphism p-8 rounded-2xl hover-lift">
+                  <Mail className="w-12 h-12 mx-auto mb-4 animate-float" />
+                  <h4 className="font-bold text-lg mb-2">Email</h4>
+                  <span className="text-white/80">{currentContent.contact.email}</span>
                 </div>
-                <div className="flex items-center justify-center">
-                  <Phone className="w-5 h-5 mr-3" />
-                  <span className="text-sm">{currentContent.contact.mobile}</span>
+                <div className="glass-morphism p-8 rounded-2xl hover-lift">
+                  <Phone className="w-12 h-12 mx-auto mb-4 animate-float" style={{ animationDelay: '0.5s' }} />
+                  <h4 className="font-bold text-lg mb-2">Phone</h4>
+                  <span className="text-white/80">{currentContent.contact.mobile}</span>
                 </div>
               </div>
-              <div className="mt-8">
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  className="bg-white text-primary hover:bg-white/90 transition-smooth shadow-elegant"
+                  className="bg-white text-primary hover:bg-white/90 transition-smooth shadow-elegant animate-glow px-8 py-4 text-lg"
                   onClick={() => window.open('https://ataicademy.aicte.gov.in/signup', '_blank')}
                 >
                   {language === 'en' ? 'Register Now' : 'এখনই নিবন্ধন করুন'}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-primary transition-smooth px-8 py-4 text-lg"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  {language === 'en' ? 'Back to Top' : 'শীর্ষে ফিরুন'}
                 </Button>
               </div>
             </div>
