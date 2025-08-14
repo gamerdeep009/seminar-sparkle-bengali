@@ -19,9 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'playfair': ['Playfair Display', 'serif'],
-				'inter': ['Inter', 'sans-serif'],
-				'space': ['Space Grotesk', 'sans-serif'],
+        'playfair': ['Playfair Display', 'serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'space': ['Space Grotesk', 'sans-serif'],
+        'bengali': ['Noto Sans Bengali', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

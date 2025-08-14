@@ -50,13 +50,13 @@ const Index = () => {
                 </div>
 
                 <div className="space-y-6">
-                  <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black font-playfair">
+                  <h1 className={`text-4xl md:text-6xl font-bold leading-tight text-black ${language === 'bn' ? 'font-bengali' : 'font-playfair'}`}>
                     {currentContent.title}
                   </h1>
-                  <p className="text-xl md:text-2xl text-black font-medium font-inter">
+                  <p className={`text-xl md:text-2xl text-black font-medium ${language === 'bn' ? 'font-bengali' : 'font-inter'}`}>
                     {currentContent.subtitle}
                   </p>
-                  <p className="text-lg text-black font-space">
+                  <p className={`text-lg text-black ${language === 'bn' ? 'font-bengali font-medium' : 'font-space'}`}>
                     {currentContent.organizedBy}
                   </p>
                 </div>
@@ -132,10 +132,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4 font-playfair">
+              <h2 className={`text-4xl md:text-5xl font-bold text-gradient mb-4 ${language === 'bn' ? 'font-bengali' : 'font-playfair'}`}>
                 {language === 'en' ? 'Organizers & Leadership' : 'আয়োজক ও নেতৃত্ব'}
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-inter">
+              <p className={`text-muted-foreground text-lg max-w-2xl mx-auto ${language === 'bn' ? 'font-bengali font-medium' : 'font-inter'}`}>
                 {language === 'en' 
                   ? 'Meet the distinguished leaders and organizers behind this prestigious seminar'
                   : 'এই মর্যাদাপূর্ণ সেমিনারের পিছনে বিশিষ্ট নেতৃবৃন্দ ও আয়োজকদের সাথে পরিচিত হন'
