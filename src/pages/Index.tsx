@@ -85,7 +85,7 @@ const Index = () => {
                   </Button>
                   <Button
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-primary transition-smooth"
+                    className="border-black text-black hover:bg-black hover:text-white transition-smooth"
                     onClick={() => document.querySelector('#schedule')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     {language === 'en' ? 'View Schedule' : 'সময়সূচি দেখুন'}
