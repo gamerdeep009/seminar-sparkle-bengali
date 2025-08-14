@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import Navigation from '@/components/Navigation';
 import ScrollReveal from '@/components/ScrollReveal';
 import { content } from '@/data/content';
@@ -11,14 +12,36 @@ import speaker1 from '@/assets/speaker-1.jpg';
 import speaker2 from '@/assets/speaker-2.jpg';
 import speaker3 from '@/assets/speaker-3.jpg';
 import speaker4 from '@/assets/speaker-4.jpg';
-import { Calendar, MapPin, Users, Mail, Phone, Clock, User, Award, BookOpen, Star, Zap, Shield } from 'lucide-react';
+import { Calendar, MapPin, Users, Mail, Phone, Clock, User, Award, BookOpen, Star, Zap, Shield, CheckCircle } from 'lucide-react';
 
 const Index = () => {
   const [language, setLanguage] = useState<'en' | 'bn'>('en');
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const currentContent = content[language];
 
   const handleLanguageChange = (lang: 'en' | 'bn') => {
     setLanguage(lang);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    
+    // Submit form to Formspree
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        setShowSuccessDialog(true);
+        form.reset();
+      }
+    }).catch(error => {
+      console.error('Form submission error:', error);
+    });
   };
 
   const speakerImages = [speaker1, speaker2, speaker3, speaker4];
@@ -585,7 +608,7 @@ const Index = () => {
                         <h3 className="text-xl md:text-2xl font-bold text-center mb-6 text-gradient">
                           Send us a Message
                         </h3>
-                        <form action="https://formspree.io/f/mdkdjdwn" method="POST" className="space-y-4 h-full flex flex-col">
+                        <form action="https://formspree.io/f/mdkdjdwn" method="POST" onSubmit={handleFormSubmit} className="space-y-4 h-full flex flex-col">
                           
                           <div className="flex-1 space-y-4">
                             {/* Name Field */}
@@ -784,6 +807,31 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader className="text-center">
+            <div className="mx-auto mb-4 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-6 h-6 text-green-600" />
+            </div>
+            <DialogTitle className="text-xl font-bold text-green-700">
+              {language === 'en' ? 'Message Sent Successfully!' : 'বার্তা সফলভাবে পাঠানো হয়েছে!'}
+            </DialogTitle>
+            <DialogDescription className="text-center text-muted-foreground">
+              {language === 'en' 
+                ? 'Thank you for reaching out! We have received your message and will get back to you shortly.'
+                : 'যোগাযোগ করার জন্য ধন্যবাদ! আমরা আপনার বার্তা পেয়েছি এবং শীঘ্রই আপনার সাথে যোগাযোগ করব।'
+              }
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center mt-4">
+            <Button onClick={() => setShowSuccessDialog(false)} className="px-8">
+              {language === 'en' ? 'Close' : 'বন্ধ করুন'}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
