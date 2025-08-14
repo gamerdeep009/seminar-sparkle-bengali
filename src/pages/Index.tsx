@@ -477,147 +477,181 @@ const Index = () => {
                 </p>
               </div>
               
-              {/* Contact Section Layout */}
-              <div className="grid lg:grid-cols-2 gap-12">
-                {/* Contact Info Cards */}
-                <div className="space-y-6">
-                  {/* Email Card */}
-                  <ScrollReveal direction="left" delay={100}>
-                    <Card className="gradient-card shadow-card hover-lift transition-smooth group">
-                      <CardContent className="p-6 text-center relative overflow-hidden">
-                        <div className="relative z-10">
-                          <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                            <Mail className="w-8 h-8 text-primary animate-float" />
+              {/* Mobile-first responsive layout */}
+              <div className="flex flex-col xl:grid xl:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-start">
+                
+                {/* Contact Information Cards */}
+                <div className="w-full order-2 xl:order-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 sm:gap-6">
+                    
+                    {/* Email Card */}
+                    <ScrollReveal direction="left" delay={100}>
+                      <Card className="gradient-card shadow-card hover-lift transition-smooth group h-full">
+                        <CardContent className="p-4 sm:p-6 text-center relative overflow-hidden h-full flex flex-col justify-center">
+                          <div className="relative z-10">
+                            <div className="bg-primary/10 p-3 sm:p-4 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                              <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-primary animate-float" />
+                            </div>
+                            <h3 className="text-base sm:text-lg font-bold text-primary mb-2">
+                              Email Address
+                            </h3>
+                            <p className="text-muted-foreground mb-3 sm:mb-4 text-xs sm:text-sm px-2">
+                              Send us your questions and we'll respond promptly
+                            </p>
+                            <div className="space-y-1">
+                              <a 
+                                href="mailto:soumen.paul@hithaldia.in" 
+                                className="block text-xs sm:text-sm font-medium text-primary hover:text-primary/80 transition-colors break-all"
+                              >
+                                soumen.paul@hithaldia.in
+                              </a>
+                              <a 
+                                href="mailto:ghoshmoumita06@gmail.com" 
+                                className="block text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors break-all"
+                              >
+                                ghoshmoumita06@gmail.com
+                              </a>
+                            </div>
                           </div>
-                          <h3 className="text-lg font-bold text-primary mb-2">
-                            Email Address
-                          </h3>
-                          <p className="text-muted-foreground mb-4 text-sm">
-                            Send us your questions and we'll respond promptly
-                          </p>
-                          <div className="space-y-1">
-                            <a href="mailto:soumen.paul@hithaldia.in" className="block text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                              soumen.paul@hithaldia.in
-                            </a>
-                            <a href="mailto:ghoshmoumita06@gmail.com" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                              ghoshmoumita06@gmail.com
-                            </a>
-                          </div>
-                        </div>
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-150"></div>
-                      </CardContent>
-                    </Card>
-                  </ScrollReveal>
+                          <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-primary/5 rounded-full -translate-y-6 translate-x-6 sm:-translate-y-8 sm:translate-x-8 transition-transform group-hover:scale-150"></div>
+                        </CardContent>
+                      </Card>
+                    </ScrollReveal>
 
-                  {/* Phone Card */}
-                  <ScrollReveal direction="left" delay={200}>
-                    <Card className="gradient-card shadow-card hover-lift transition-smooth group">
-                      <CardContent className="p-6 text-center relative overflow-hidden">
-                        <div className="relative z-10">
-                          <div className="bg-accent/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                            <Phone className="w-8 h-8 text-accent animate-float" style={{ animationDelay: '0.5s' }} />
+                    {/* Phone Card */}
+                    <ScrollReveal direction="left" delay={200}>
+                      <Card className="gradient-card shadow-card hover-lift transition-smooth group h-full">
+                        <CardContent className="p-4 sm:p-6 text-center relative overflow-hidden h-full flex flex-col justify-center">
+                          <div className="relative z-10">
+                            <div className="bg-accent/10 p-3 sm:p-4 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                              <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-accent animate-float" style={{ animationDelay: '0.5s' }} />
+                            </div>
+                            <h3 className="text-base sm:text-lg font-bold text-accent mb-2">
+                              Phone Number
+                            </h3>
+                            <p className="text-muted-foreground mb-3 sm:mb-4 text-xs sm:text-sm px-2">
+                              Call us for immediate assistance and support
+                            </p>
+                            <div className="space-y-1">
+                              <a 
+                                href="tel:+919433366493" 
+                                className="block text-xs sm:text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+                              >
+                                +91 9433366493
+                              </a>
+                              <a 
+                                href="tel:+916294520107" 
+                                className="block text-xs sm:text-sm text-muted-foreground hover:text-accent transition-colors"
+                              >
+                                +91 6294520107
+                              </a>
+                            </div>
                           </div>
-                          <h3 className="text-lg font-bold text-accent mb-2">
-                            Phone Number
-                          </h3>
-                          <p className="text-muted-foreground mb-4 text-sm">
-                            Call us for immediate assistance and support
-                          </p>
-                          <div className="space-y-1">
-                            <a href="tel:+919433366493" className="block text-sm font-medium text-accent hover:text-accent/80 transition-colors">
-                              9433366493
-                            </a>
-                            <a href="tel:+916294520107" className="block text-sm text-muted-foreground hover:text-accent transition-colors">
-                              6294520107
-                            </a>
-                          </div>
-                        </div>
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-150"></div>
-                      </CardContent>
-                    </Card>
-                  </ScrollReveal>
+                          <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-accent/5 rounded-full -translate-y-6 translate-x-6 sm:-translate-y-8 sm:translate-x-8 transition-transform group-hover:scale-150"></div>
+                        </CardContent>
+                      </Card>
+                    </ScrollReveal>
 
-                  {/* Location Card */}
-                  <ScrollReveal direction="left" delay={300}>
-                    <Card className="gradient-card shadow-card hover-lift transition-smooth group">
-                      <CardContent className="p-6 text-center relative overflow-hidden">
-                        <div className="relative z-10">
-                          <div className="bg-secondary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                            <MapPin className="w-8 h-8 text-secondary animate-float" style={{ animationDelay: '1s' }} />
+                    {/* Location Card - Full width on mobile when in grid */}
+                    <ScrollReveal direction="left" delay={300}>
+                      <Card className="gradient-card shadow-card hover-lift transition-smooth group h-full sm:col-span-2 xl:col-span-1">
+                        <CardContent className="p-4 sm:p-6 text-center relative overflow-hidden h-full flex flex-col justify-center">
+                          <div className="relative z-10">
+                            <div className="bg-secondary/10 p-3 sm:p-4 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                              <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-secondary animate-float" style={{ animationDelay: '1s' }} />
+                            </div>
+                            <h3 className="text-base sm:text-lg font-bold text-secondary mb-2">
+                              Location
+                            </h3>
+                            <p className="text-muted-foreground mb-3 sm:mb-4 text-xs sm:text-sm px-2">
+                              Visit us at our campus for in-person assistance
+                            </p>
+                            <address className="text-xs sm:text-sm text-muted-foreground not-italic font-medium">
+                              Haldia Institute of Technology
+                            </address>
                           </div>
-                          <h3 className="text-lg font-bold text-secondary mb-2">
-                            Location
-                          </h3>
-                          <p className="text-muted-foreground mb-4 text-sm">
-                            Visit us at our campus for in-person assistance
-                          </p>
-                          <address className="text-sm text-muted-foreground not-italic">
-                            Haldia Institute of Technology
-                          </address>
-                        </div>
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-150"></div>
-                      </CardContent>
-                    </Card>
-                  </ScrollReveal>
+                          <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-secondary/5 rounded-full -translate-y-6 translate-x-6 sm:-translate-y-8 sm:translate-x-8 transition-transform group-hover:scale-150"></div>
+                        </CardContent>
+                      </Card>
+                    </ScrollReveal>
+                  </div>
                 </div>
 
                 {/* Contact Form */}
                 <ScrollReveal delay={400}>
-                  <div>
+                  <div className="w-full order-1 xl:order-2">
                     <Card className="gradient-card shadow-card">
-                      <CardContent className="p-8">
-                        <h3 className="text-2xl font-bold text-center mb-6 text-gradient">Send us a Message</h3>
-                        <form action="https://formspree.io/f/mdkdjdwn" method="POST" className="space-y-6">
-                          <div className="grid md:grid-cols-2 gap-6">
+                      <CardContent className="p-4 sm:p-6 lg:p-8">
+                        <h3 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6 text-gradient">
+                          Send us a Message
+                        </h3>
+                        <form action="https://formspree.io/f/mdkdjdwn" method="POST" className="space-y-4 sm:space-y-6">
+                          
+                          {/* Name and Email Row */}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                             <div>
-                              <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                              <label htmlFor="name" className="block text-sm font-medium mb-2">
+                                Name *
+                              </label>
                               <input
                                 type="text"
                                 id="name"
                                 name="name"
                                 required
-                                className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
                                 placeholder="Your full name"
                               />
                             </div>
                             <div>
-                              <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                              <label htmlFor="email" className="block text-sm font-medium mb-2">
+                                Email *
+                              </label>
                               <input
                                 type="email"
                                 id="email"
                                 name="email"
                                 required
-                                className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
                                 placeholder="your.email@example.com"
                               />
                             </div>
                           </div>
+
+                          {/* Subject */}
                           <div>
-                            <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
+                            <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                              Subject *
+                            </label>
                             <input
                               type="text"
                               id="subject"
                               name="subject"
                               required
-                              className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm"
                               placeholder="Subject of your message"
                             />
                           </div>
+
+                          {/* Message */}
                           <div>
-                            <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                            <label htmlFor="message" className="block text-sm font-medium mb-2">
+                              Message *
+                            </label>
                             <textarea
                               id="message"
                               name="message"
-                              rows={6}
-                              required
-                              className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                              rows={4}
+                              className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none text-sm min-h-[100px] sm:min-h-[120px]"
                               placeholder="Your message here..."
+                              required
                             ></textarea>
                           </div>
-                          <div className="text-center">
+
+                          {/* Submit Button */}
+                          <div className="text-center pt-2">
                             <Button
                               type="submit"
-                              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-lg font-medium transition-colors shadow-elegant"
+                              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-colors shadow-elegant text-sm sm:text-base"
                             >
                               Send Message
                             </Button>
