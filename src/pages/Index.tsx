@@ -50,13 +50,13 @@ const Index = () => {
                 </div>
 
                 <div className="space-y-6">
-                  <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gradient">
+                  <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
                     {currentContent.title}
                   </h1>
-                  <p className="text-xl md:text-2xl text-white/95 font-medium">
+                  <p className="text-xl md:text-2xl text-black font-medium">
                     {currentContent.subtitle}
                   </p>
-                  <p className="text-lg text-white/90">
+                  <p className="text-lg text-black">
                     {currentContent.organizedBy}
                   </p>
                 </div>

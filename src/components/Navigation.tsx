@@ -39,9 +39,9 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-black ${
       isScrolled 
-        ? 'bg-white/10 dark:bg-gray-900/10 backdrop-blur-xl border-b border-white/20 shadow-2xl' 
+        ? 'bg-white/10 dark:bg-gray-900/10 backdrop-blur-xl shadow-2xl' 
         : 'bg-white/5 backdrop-blur-sm'
     } rounded-b-3xl mx-4 mt-4`}>
       <div className="container mx-auto px-4 py-4">
