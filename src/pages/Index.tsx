@@ -477,153 +477,157 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="grid lg:grid-cols-3 gap-8 mb-16">
-                {/* Email Card */}
-                <ScrollReveal direction="left" delay={100}>
-                  <Card className="gradient-card shadow-card hover-lift transition-smooth group">
-                    <CardContent className="p-8 text-center relative overflow-hidden">
-                      <div className="relative z-10">
-                        <div className="bg-primary/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                          <Mail className="w-10 h-10 text-primary animate-float" />
+              {/* Contact Section Layout */}
+              <div className="grid lg:grid-cols-2 gap-12">
+                {/* Contact Info Cards */}
+                <div className="space-y-6">
+                  {/* Email Card */}
+                  <ScrollReveal direction="left" delay={100}>
+                    <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                      <CardContent className="p-6 text-center relative overflow-hidden">
+                        <div className="relative z-10">
+                          <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <Mail className="w-8 h-8 text-primary animate-float" />
+                          </div>
+                          <h3 className="text-lg font-bold text-primary mb-2">
+                            Email Address
+                          </h3>
+                          <p className="text-muted-foreground mb-4 text-sm">
+                            Send us your questions and we'll respond promptly
+                          </p>
+                          <div className="space-y-1">
+                            <a href="mailto:soumen.paul@hithaldia.in" className="block text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                              soumen.paul@hithaldia.in
+                            </a>
+                            <a href="mailto:ghoshmoumita06@gmail.com" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                              ghoshmoumita06@gmail.com
+                            </a>
+                          </div>
                         </div>
-                        <h3 className="text-xl font-bold text-primary mb-3">
-                          Email Address
-                        </h3>
-                        <p className="text-muted-foreground mb-4">
-                          Send us your questions and we'll respond promptly
-                        </p>
-                        <div className="space-y-2">
-                          <a href="mailto:soumen.paul@hithaldia.in" className="block text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                            soumen.paul@hithaldia.in
-                          </a>
-                          <a href="mailto:ghoshmoumita06@gmail.com" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                            ghoshmoumita06@gmail.com
-                          </a>
-                        </div>
-                      </div>
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-primary/5 rounded-full -translate-y-10 translate-x-10 transition-transform group-hover:scale-150"></div>
-                    </CardContent>
-                  </Card>
-                </ScrollReveal>
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-150"></div>
+                      </CardContent>
+                    </Card>
+                  </ScrollReveal>
 
-                {/* Phone Card */}
-                <ScrollReveal direction="up" delay={200}>
-                  <Card className="gradient-card shadow-card hover-lift transition-smooth group">
-                    <CardContent className="p-8 text-center relative overflow-hidden">
-                      <div className="relative z-10">
-                        <div className="bg-accent/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                          <Phone className="w-10 h-10 text-accent animate-float" style={{ animationDelay: '0.5s' }} />
+                  {/* Phone Card */}
+                  <ScrollReveal direction="left" delay={200}>
+                    <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                      <CardContent className="p-6 text-center relative overflow-hidden">
+                        <div className="relative z-10">
+                          <div className="bg-accent/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <Phone className="w-8 h-8 text-accent animate-float" style={{ animationDelay: '0.5s' }} />
+                          </div>
+                          <h3 className="text-lg font-bold text-accent mb-2">
+                            Phone Number
+                          </h3>
+                          <p className="text-muted-foreground mb-4 text-sm">
+                            Call us for immediate assistance and support
+                          </p>
+                          <div className="space-y-1">
+                            <a href="tel:+919433366493" className="block text-sm font-medium text-accent hover:text-accent/80 transition-colors">
+                              9433366493
+                            </a>
+                            <a href="tel:+916294520107" className="block text-sm text-muted-foreground hover:text-accent transition-colors">
+                              6294520107
+                            </a>
+                          </div>
                         </div>
-                        <h3 className="text-xl font-bold text-accent mb-3">
-                          Phone Number
-                        </h3>
-                        <p className="text-muted-foreground mb-4">
-                          Call us for immediate assistance and support
-                        </p>
-                        <div className="space-y-2">
-                          <a href="tel:+919433366493" className="block text-sm font-medium text-accent hover:text-accent/80 transition-colors">
-                            9433366493
-                          </a>
-                          <a href="tel:+916294520107" className="block text-sm text-muted-foreground hover:text-accent transition-colors">
-                            6294520107
-                          </a>
-                        </div>
-                      </div>
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-full -translate-y-10 translate-x-10 transition-transform group-hover:scale-150"></div>
-                    </CardContent>
-                  </Card>
-                </ScrollReveal>
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-accent/5 rounded-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-150"></div>
+                      </CardContent>
+                    </Card>
+                  </ScrollReveal>
 
-                {/* Location Card */}
-                <ScrollReveal direction="right" delay={300}>
-                  <Card className="gradient-card shadow-card hover-lift transition-smooth group">
-                    <CardContent className="p-8 text-center relative overflow-hidden">
-                      <div className="relative z-10">
-                        <div className="bg-secondary/10 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                          <MapPin className="w-10 h-10 text-secondary animate-float" style={{ animationDelay: '1s' }} />
+                  {/* Location Card */}
+                  <ScrollReveal direction="left" delay={300}>
+                    <Card className="gradient-card shadow-card hover-lift transition-smooth group">
+                      <CardContent className="p-6 text-center relative overflow-hidden">
+                        <div className="relative z-10">
+                          <div className="bg-secondary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <MapPin className="w-8 h-8 text-secondary animate-float" style={{ animationDelay: '1s' }} />
+                          </div>
+                          <h3 className="text-lg font-bold text-secondary mb-2">
+                            Location
+                          </h3>
+                          <p className="text-muted-foreground mb-4 text-sm">
+                            Visit us at our campus for in-person assistance
+                          </p>
+                          <address className="text-sm text-muted-foreground not-italic">
+                            Haldia Institute of Technology
+                          </address>
                         </div>
-                        <h3 className="text-xl font-bold text-secondary mb-3">
-                          Location
-                        </h3>
-                        <p className="text-muted-foreground mb-4">
-                          Visit us at our campus for in-person assistance
-                        </p>
-                        <address className="text-sm text-muted-foreground not-italic">
-                          Haldia Institute of Technology
-                        </address>
-                      </div>
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-secondary/5 rounded-full -translate-y-10 translate-x-10 transition-transform group-hover:scale-150"></div>
-                    </CardContent>
-                  </Card>
-                </ScrollReveal>
-              </div>
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-150"></div>
+                      </CardContent>
+                    </Card>
+                  </ScrollReveal>
+                </div>
 
-              {/* Contact Form */}
-              <ScrollReveal delay={400}>
-                <div className="max-w-2xl mx-auto">
-                  <Card className="gradient-card shadow-card">
-                    <CardContent className="p-8">
-                      <h3 className="text-2xl font-bold text-center mb-6 text-gradient">Send us a Message</h3>
-                      <form action="https://formspree.io/f/mdkdjdwn" method="POST" className="space-y-6">
-                        <div className="grid md:grid-cols-2 gap-6">
+                {/* Contact Form */}
+                <ScrollReveal delay={400}>
+                  <div>
+                    <Card className="gradient-card shadow-card">
+                      <CardContent className="p-8">
+                        <h3 className="text-2xl font-bold text-center mb-6 text-gradient">Send us a Message</h3>
+                        <form action="https://formspree.io/f/mdkdjdwn" method="POST" className="space-y-6">
+                          <div className="grid md:grid-cols-2 gap-6">
+                            <div>
+                              <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                              <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                placeholder="Your full name"
+                              />
+                            </div>
+                            <div>
+                              <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                              <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                                placeholder="your.email@example.com"
+                              />
+                            </div>
+                          </div>
                           <div>
-                            <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                            <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
                             <input
                               type="text"
-                              id="name"
-                              name="name"
+                              id="subject"
+                              name="subject"
                               required
                               className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                              placeholder="Your full name"
+                              placeholder="Subject of your message"
                             />
                           </div>
                           <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                            <input
-                              type="email"
-                              id="email"
-                              name="email"
+                            <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                            <textarea
+                              id="message"
+                              name="message"
+                              rows={6}
                               required
-                              className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                              placeholder="your.email@example.com"
-                            />
+                              className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                              placeholder="Your message here..."
+                            ></textarea>
                           </div>
-                        </div>
-                        <div>
-                          <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                          <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            required
-                            className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                            placeholder="Subject of your message"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                          <textarea
-                            id="message"
-                            name="message"
-                            rows={6}
-                            required
-                            className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
-                            placeholder="Your message here..."
-                          ></textarea>
-                        </div>
-                        <div className="text-center">
-                          <Button
-                            type="submit"
-                            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-lg font-medium transition-colors shadow-elegant"
-                          >
-                            Send Message
-                          </Button>
-                        </div>
-                      </form>
-                    </CardContent>
-                  </Card>
-                </div>
-              </ScrollReveal>
+                          <div className="text-center">
+                            <Button
+                              type="submit"
+                              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-lg font-medium transition-colors shadow-elegant"
+                            >
+                              Send Message
+                            </Button>
+                          </div>
+                        </form>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </ScrollReveal>
+              </div>
               
               <div className="text-center mt-12">
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
