@@ -29,7 +29,7 @@ const Index = () => {
       <Navigation language={language} onLanguageChange={handleLanguageChange} />
 
       {/* Hero Section */}
-      <section id="home" className="h-screen flex items-center gradient-hero text-white pt-20">
+      <section id="home" className="h-screen flex items-center text-white pt-20" style={{ background: 'linear-gradient(90deg, rgba(28, 178, 237, 1) 0%, rgba(51, 123, 212, 1) 50%, rgba(255, 255, 255, 1) 100%)' }}>
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
@@ -94,30 +94,23 @@ const Index = () => {
               </div>
             </ScrollReveal>
 
-            {/* Right Side - Gradient Background */}
+            {/* Right Side - College Image */}
             <ScrollReveal direction="right">
               <div className="relative">
-                <div className="relative h-[500px] rounded-2xl shadow-elegant hover-lift overflow-hidden">
-                  {/* Beautiful gradient background */}
-                  <div className="w-full h-full bg-gradient-to-br from-cyan-400 via-blue-400 to-blue-600 relative">
-                    {/* Animated floating elements */}
-                    <div className="absolute inset-0 overflow-hidden">
-                      <div className="absolute top-10 left-10 w-20 h-20 bg-white/20 rounded-full animate-float"></div>
-                      <div className="absolute top-32 right-16 w-12 h-12 bg-white/15 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-                      <div className="absolute bottom-20 left-20 w-16 h-16 bg-white/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-                      <div className="absolute bottom-32 right-8 w-8 h-8 bg-white/25 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
-                    </div>
-                    
-                    {/* Content overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6 z-10">
-                      <h3 className="text-2xl font-bold text-white mb-2">
-                        Haldia Institute of Technology
-                      </h3>
-                      <p className="text-white/90">
-                        Leading Technical Education Excellence
-                      </p>
-                    </div>
+                <div className="relative overflow-hidden rounded-2xl shadow-elegant hover-lift">
+                  <img 
+                    src={hitCampus} 
+                    alt="HIT Campus" 
+                    className="w-full h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Haldia Institute of Technology
+                    </h3>
+                    <p className="text-white/80">
+                      Leading Technical Education Excellence
+                    </p>
                   </div>
                 </div>
                 
