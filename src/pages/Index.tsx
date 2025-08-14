@@ -50,13 +50,13 @@ const Index = () => {
                 </div>
 
                 <div className="space-y-6">
-                  <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black">
+                  <h1 className="text-4xl md:text-6xl font-bold leading-tight text-black font-playfair">
                     {currentContent.title}
                   </h1>
-                  <p className="text-xl md:text-2xl text-black font-medium">
+                  <p className="text-xl md:text-2xl text-black font-medium font-inter">
                     {currentContent.subtitle}
                   </p>
-                  <p className="text-lg text-black">
+                  <p className="text-lg text-black font-space">
                     {currentContent.organizedBy}
                   </p>
                 </div>
@@ -132,10 +132,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4 font-playfair">
                 {language === 'en' ? 'Organizers & Leadership' : 'আয়োজক ও নেতৃত্ব'}
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-inter">
                 {language === 'en' 
                   ? 'Meet the distinguished leaders and organizers behind this prestigious seminar'
                   : 'এই মর্যাদাপূর্ণ সেমিনারের পিছনে বিশিষ্ট নেতৃবৃন্দ ও আয়োজকদের সাথে পরিচিত হন'
@@ -151,11 +151,11 @@ const Index = () => {
                 <CardContent className="p-8 text-center relative overflow-hidden">
                   <div className="relative z-10">
                     <Award className="w-16 h-16 text-primary mx-auto mb-6 animate-float" />
-                    <h3 className="text-xl font-bold text-primary mb-3">
+                    <h3 className="text-xl font-bold text-primary mb-3 font-space">
                       {currentContent.chiefPatron.title}
                     </h3>
-                    <h4 className="font-bold mb-3 text-lg">{currentContent.chiefPatron.name}</h4>
-                    <p className="text-muted-foreground">
+                    <h4 className="font-bold mb-3 text-lg font-inter">{currentContent.chiefPatron.name}</h4>
+                    <p className="text-muted-foreground font-inter">
                       {currentContent.chiefPatron.designation}
                     </p>
                   </div>
@@ -235,10 +235,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4 font-playfair">
                 {currentContent.speakers.title}
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-inter">
                 {language === 'en' 
                   ? 'Distinguished experts sharing cutting-edge insights in cybersecurity and technology'
                   : 'সাইবার নিরাপত্তা ও প্রযুক্তিতে অত্যাধুনিক অন্তর্দৃষ্টি ভাগ করে নিচ্ছেন বিশিষ্ট বিশেষজ্ঞরা'
@@ -267,10 +267,10 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors font-space">
                         {speaker}
                       </h3>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-muted-foreground text-sm font-inter">
                         {language === 'en' ? 'Technology Expert' : 'প্রযুক্তি বিশেষজ্ঞ'}
                       </p>
                     </div>
@@ -287,10 +287,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4 font-playfair">
                 {currentContent.schedule.title}
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-inter">
                 {language === 'en' 
                   ? 'Comprehensive program schedule for both days of the seminar'
                   : 'সেমিনারের উভয় দিনের জন্য বিস্তৃত কর্মসূচির সময়সূচি'
