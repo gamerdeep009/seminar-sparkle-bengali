@@ -461,47 +461,107 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen py-20 gradient-hero text-white flex items-center">
+      <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-4xl md:text-5xl font-bold mb-8 text-gradient">
-                {currentContent.contact.title}
-              </h3>
-              <p className="text-xl opacity-90 mb-12">
-                {language === 'en' 
-                  ? 'Get in touch with us for more information about the seminar'
-                  : 'সেমিনার সম্পর্কে আরও তথ্যের জন্য আমাদের সাথে যোগাযোগ করুন'
-                }
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                  <Mail className="w-12 h-12 mx-auto mb-4 animate-float" />
-                  <h4 className="font-bold text-lg mb-2">Email</h4>
-                  <span className="text-white/80">{currentContent.contact.email}</span>
-                </div>
-                <div className="glass-morphism p-8 rounded-2xl hover-lift">
-                  <Phone className="w-12 h-12 mx-auto mb-4 animate-float" style={{ animationDelay: '0.5s' }} />
-                  <h4 className="font-bold text-lg mb-2">Phone</h4>
-                  <span className="text-white/80">{currentContent.contact.mobile}</span>
-                </div>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h3 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+                  {currentContent.contact.title}
+                </h3>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  {language === 'en' 
+                    ? 'Connect with us for inquiries, registration assistance, or additional information about the seminar.'
+                    : 'অনুসন্ধান, নিবন্ধন সহায়তা বা সেমিনার সম্পর্কে অতিরিক্ত তথ্যের জন্য আমাদের সাথে যোগাযোগ করুন।'
+                  }
+                </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="bg-white text-primary hover:bg-white/90 transition-smooth shadow-elegant animate-glow px-8 py-4 text-lg"
-                  onClick={() => window.open('https://ataicademy.aicte.gov.in/signup', '_blank')}
-                >
-                  {language === 'en' ? 'Register Now' : 'এখনই নিবন্ধন করুন'}
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-primary transition-smooth px-8 py-4 text-lg"
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                >
-                  {language === 'en' ? 'Back to Top' : 'শীর্ষে ফিরুন'}
-                </Button>
+              <div className="grid lg:grid-cols-3 gap-8 mb-12">
+                <Card className="gradient-card shadow-card hover-lift">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Mail className="w-8 h-8 text-primary" />
+                    </div>
+                    <h4 className="font-bold text-xl mb-3 text-foreground">
+                      {language === 'en' ? 'Email Address' : 'ইমেইল ঠিকানা'}
+                    </h4>
+                    <p className="text-muted-foreground mb-4">
+                      {language === 'en' 
+                        ? 'Send us your questions and we\'ll respond promptly'
+                        : 'আমাদের আপনার প্রশ্ন পাঠান এবং আমরা দ্রুত উত্তর দেব'
+                      }
+                    </p>
+                    <a 
+                      href={`mailto:${currentContent.contact.email}`}
+                      className="text-primary font-semibold hover:underline transition-all duration-300"
+                    >
+                      {currentContent.contact.email}
+                    </a>
+                  </CardContent>
+                </Card>
+
+                <Card className="gradient-card shadow-card hover-lift">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Phone className="w-8 h-8 text-primary" />
+                    </div>
+                    <h4 className="font-bold text-xl mb-3 text-foreground">
+                      {language === 'en' ? 'Phone Number' : 'ফোন নম্বর'}
+                    </h4>
+                    <p className="text-muted-foreground mb-4">
+                      {language === 'en' 
+                        ? 'Call us for immediate assistance and support'
+                        : 'তাৎক্ষণিক সহায়তা এবং সমর্থনের জন্য আমাদের কল করুন'
+                      }
+                    </p>
+                    <a 
+                      href={`tel:${currentContent.contact.mobile}`}
+                      className="text-primary font-semibold hover:underline transition-all duration-300"
+                    >
+                      {currentContent.contact.mobile}
+                    </a>
+                  </CardContent>
+                </Card>
+
+                <Card className="gradient-card shadow-card hover-lift">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <MapPin className="w-8 h-8 text-primary" />
+                    </div>
+                    <h4 className="font-bold text-xl mb-3 text-foreground">
+                      {language === 'en' ? 'Location' : 'অবস্থান'}
+                    </h4>
+                    <p className="text-muted-foreground mb-4">
+                      {language === 'en' 
+                        ? 'Visit us at our campus for in-person assistance'
+                        : 'ব্যক্তিগত সহায়তার জন্য আমাদের ক্যাম্পাসে আসুন'
+                      }
+                    </p>
+                    <span className="text-primary font-semibold">
+                      {language === 'en' ? 'Haldia Institute of Technology' : 'হলদিয়া ইনস্টিটিউট অফ টেকনোলজি'}
+                    </span>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <div className="text-center">
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                  <Button
+                    size="lg"
+                    className="px-12 py-4 text-lg font-semibold shadow-elegant hover-scale"
+                    onClick={() => window.open('https://ataicademy.aicte.gov.in/signup', '_blank')}
+                  >
+                    {language === 'en' ? 'Register Now' : 'এখনই নিবন্ধন করুন'}
+                  </Button>
+                  
+                  <div className="text-sm text-muted-foreground">
+                    {language === 'en' 
+                      ? 'Or contact us directly for personalized assistance'
+                      : 'অথবা ব্যক্তিগত সহায়তার জন্য সরাসরি আমাদের সাথে যোগাযোগ করুন'
+                    }
+                  </div>
+                </div>
               </div>
             </div>
           </ScrollReveal>
