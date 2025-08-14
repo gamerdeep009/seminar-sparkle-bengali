@@ -29,7 +29,7 @@ const Index = () => {
       <Navigation language={language} onLanguageChange={handleLanguageChange} />
 
       {/* Hero Section */}
-      <section id="home" className="section-full gradient-hero text-white pt-20">
+      <section id="home" className="h-screen flex items-center gradient-hero text-white pt-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
@@ -40,13 +40,12 @@ const Index = () => {
                   <img 
                     src={cyberSecurityLogo} 
                     alt="Cyber Security Logo" 
-                    className="h-16 w-16 animate-float hover-lift" 
+                    className="h-16 w-16" 
                   />
                   <img 
                     src={cyberSecurityLogo} 
                     alt="HIT Logo" 
-                    className="h-16 w-16 animate-float hover-lift" 
-                    style={{ animationDelay: '0.5s' }}
+                    className="h-16 w-16" 
                   />
                 </div>
 
@@ -54,10 +53,10 @@ const Index = () => {
                   <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gradient">
                     {currentContent.title}
                   </h1>
-                  <p className="text-xl md:text-2xl opacity-90">
+                  <p className="text-xl md:text-2xl text-white/95 font-medium">
                     {currentContent.subtitle}
                   </p>
-                  <p className="text-lg opacity-80">
+                  <p className="text-lg text-white/90">
                     {currentContent.organizedBy}
                   </p>
                 </div>
@@ -129,7 +128,7 @@ const Index = () => {
       </section>
 
       {/* Organizers Section */}
-      <section id="organizers" className="section-full gradient-section">
+      <section id="organizers" className="min-h-screen py-20 gradient-section">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -232,7 +231,7 @@ const Index = () => {
       </section>
 
       {/* Speakers Section */}
-      <section id="speakers" className="section-full bg-background">
+      <section id="speakers" className="min-h-screen py-20 bg-background">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -284,7 +283,7 @@ const Index = () => {
       </section>
 
       {/* Schedule Section */}
-      <section id="schedule" className="section-full gradient-section">
+      <section id="schedule" className="min-h-screen py-20 gradient-section">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -462,7 +461,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-full gradient-hero text-white">
+      <section id="contact" className="min-h-screen py-20 gradient-hero text-white flex items-center">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center">
