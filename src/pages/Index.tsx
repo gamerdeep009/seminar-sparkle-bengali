@@ -29,7 +29,7 @@ const Index = () => {
       <Navigation language={language} onLanguageChange={handleLanguageChange} />
 
       {/* Hero Section */}
-      <section id="home" className="h-screen flex items-center text-white pt-20" style={{ background: 'linear-gradient(90deg, rgba(28, 178, 237, 1) 0%, rgba(51, 123, 212, 1) 50%, rgba(255, 255, 255, 1) 100%)' }}>
+      <section id="home" className="min-h-screen flex items-center text-white pt-24 md:pt-20 pb-8 md:pb-0" style={{ background: 'linear-gradient(90deg, rgba(28, 178, 237, 1) 0%, rgba(51, 123, 212, 1) 50%, rgba(255, 255, 255, 1) 100%)' }}>
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
@@ -101,7 +101,7 @@ const Index = () => {
                   <img 
                     src={hitCampus} 
                     alt="HIT Campus" 
-                    className="w-full h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                    className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-700 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6">

@@ -43,19 +43,19 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
       isScrolled 
         ? 'bg-white/10 dark:bg-gray-900/10 backdrop-blur-xl shadow-2xl' 
         : 'bg-white/5 backdrop-blur-sm'
-    } rounded-b-3xl mx-4 mt-4`}>
-      <div className="container mx-auto px-4 py-4">
+    } rounded-b-3xl mx-2 md:mx-4 mt-2 md:mt-4`}>
+      <div className="container mx-auto px-2 md:px-4 py-2 md:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('#home')}>
+          <div className="flex items-center space-x-2 md:space-x-3 group cursor-pointer" onClick={() => scrollToSection('#home')}>
             <img 
               src={cyberSecurityLogo} 
               alt="Cyber Security Logo" 
-              className="h-12 w-12 transition-transform duration-300 group-hover:scale-110" 
+              className="h-8 w-8 md:h-12 md:w-12 transition-transform duration-300 group-hover:scale-110" 
             />
             <div className="text-foreground">
-              <h1 className="text-xl font-bold">HIT Seminar 2025</h1>
-              <p className="text-sm opacity-80">Cyber Physical Systems</p>
+              <h1 className="text-lg md:text-xl font-bold">HIT Seminar 2025</h1>
+              <p className="text-xs md:text-sm opacity-80 hidden sm:block">Cyber Physical Systems</p>
             </div>
           </div>
 
