@@ -10,9 +10,9 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ currentLanguage, onLang
   return (
     <div className="relative group">
       {/* Tooltip */}
-      <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+      <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
         {currentLanguage === 'en' ? 'Switch to Bengali' : 'Switch to English'}
-        <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-black/80"></div>
+        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-b-black/80"></div>
       </div>
       {/* Background container with glassmorphism */}
       <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-1 shadow-elegant">
