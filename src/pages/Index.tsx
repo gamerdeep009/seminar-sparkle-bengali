@@ -22,6 +22,7 @@ const Index = () => {
   // Function to highlight speaker names in topics
   const highlightSpeakerNames = (text: string) => {
     const speakerNames = [
+      // English names
       'Dr. Sangram Ray',
       'Prof. Sankhayan Choudhury', 
       'Dr. Tanushyam Chattopadhyay',
@@ -29,7 +30,16 @@ const Index = () => {
       'Dr. Arup Kumar Pal',
       'Mr. Kousik Maiti',
       'Dr. Dakshina Ranjan Kisku',
-      'Mr. Anup Mondal'
+      'Mr. Anup Mondal',
+      // Bengali names
+      'ডঃ সংগ্রাম রায়',
+      'প্রফেসর সংখায়ন চৌধুরী',
+      'ডঃ তনুশ্যাম চট্টোপাধ্যায়',
+      'ডঃ দেবাশিস গিরি',
+      'ডঃ অরূপ কুমার পাল',
+      'শ্রী কৌশিক মাইতি',
+      'ডঃ দক্ষিণা রঞ্জন কিস্কু',
+      'শ্রী অনুপ মণ্ডল'
     ];
 
     let highlightedText = text;
