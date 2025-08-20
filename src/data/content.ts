@@ -63,19 +63,27 @@ export const content = {
       day1: {
         title: "Day 1",
         sessions: [
-          { time: "10:00 AM - 11:00 AM", topic: "Dr. Sangram Ray - Challenges and Recent Solutions in Cyber Physical Systems", speaker: "Associate Professor of Computer Science and Engineering, NIT Sikkim" },
-          { time: "11:45 AM - 12:45 PM", topic: "Prof. Sankhayan Choudhury - Comprehend the Container Ecosystem", speaker: "Computer Science and Engineering, CU" },
-          { time: "2:15 PM - 3:15 PM", topic: "Dr. Tanushyam Chattopadhyay - Development of Cyber Physical Systems", speaker: "International Limited Live Address Via Zoom" },
-          { time: "4:00 PM - 5:30 PM", topic: "Dr. Debasish Giri - A Predictive Model for Mining Attack Detection using ML", speaker: "Department of Information Technology, Maulana Abul Kalam Azad University of Technology" }
+          { time: "9:00 AM - 9:45 AM", topic: "Registration and High Tea", speaker: "" },
+          { time: "9:45 AM - 10:00 AM", topic: "Inauguration", speaker: "" },
+          { time: "10:00 AM - 11:00 AM", topic: "Challenges and Recent Solutions in Cyber Security By Dr. Sangram Ray", speaker: "Associate Professor of Computer Science and Engineering, NIT Sikkim" },
+          { time: "11:45 AM - 12:45 PM", topic: "Recommendation Challenge: Apprehend the Customer Perception by Prof. Sankhayan Choudhury", speaker: "Computer Science and Engineering, CU" },
+          { time: "1:15 PM - 2:15 PM", topic: "Lunch Break", speaker: "" },
+          { time: "2:15 PM - 3:15 PM", topic: "Industrial Al: Industrial Deployment of Cyber Physical Systems By Dr. Tanushyam Chattopadhyay", speaker: "International Limited Live Address Via Zoom" },
+          { time: "4:00 PM - 5:30 PM", topic: "A Prediction Model for Mining Attack Detection using ML By Dr. Debasish Giri", speaker: "Department of Information Technology, Maulana Abul Kalam Azad University of Technology" },
+          { time: "5:30 PM - 5:45 PM", topic: "Snacks and Tea Break", speaker: "" }
         ]
       },
       day2: {
         title: "Day 2",
         sessions: [
-          { time: "10:00 AM - 11:00 AM", topic: "Dr. Arup Kumar Pal - Secure Video Surveillance", speaker: "Associate Professor of Computer Science and Engineering, IIT (ISM) Dhanbad" },
-          { time: "11:45 AM - 12:45 PM", topic: "Mr. Kousik Maiti - Secure Intelligence and existing challenges", speaker: "Scientist Level Director at Centre for Development of Advanced Computing" },
-          { time: "2:15 PM - 3:15 PM", topic: "Dr. Dakshina Ranjan Kisku - Health Care in Cyber Physical Systems", speaker: "Associate Professor of Computer Science and Engineering, NIT Durgapur" },
-          { time: "4:00 PM - 5:30 PM", topic: "Mr. Anup Mondal - AI Driven Intrusion Detection Systems: CDG", speaker: "Software Developer at Version 1" }
+          { time: "9:00 AM - 9:45 AM", topic: "Registration and High Tea", speaker: "" },
+          { time: "9:45 AM - 10:00 AM", topic: "Inauguration", speaker: "" },
+          { time: "10:00 AM - 11:00 AM", topic: "Secure Video Surveillance System By Dr. Arup Kumar Pal", speaker: "Associate Professor of Computer Science and Engineering, IIT (ISM) Dhanbad" },
+          { time: "11:45 AM - 12:45 PM", topic: "Threat Intelligence and Hunting Fundamentals By Mr. Kousik Maiti", speaker: "Scientist Level Director at Centre for Development of Advanced Computing" },
+          { time: "1:15 PM - 2:15 PM", topic: "Lunch Break", speaker: "" },
+          { time: "2:15 PM - 3:15 PM", topic: "Health Care in Cyber Physical Systems By Dr. Dakshina Ranjan Kisku", speaker: "Associate Professor of Computer Science and Engineering, NIT Durgapur" },
+          { time: "4:00 PM - 5:30 PM", topic: "AI Driven Intrusion Detection Systems in CPS By Mr. Anup Mondal", speaker: "Software Developer at Version 1" },
+          { time: "5:30 PM - 5:45 PM", topic: "Snacks and Tea Break", speaker: "" }
         ]
       }
     },
@@ -181,19 +189,27 @@ export const content = {
       day1: {
         title: "প্রথম দিন",
         sessions: [
-          { time: "সকাল ১০:০০ - ১১:০০", topic: "ডঃ সংগ্রাম রায় - সাইবার ফিজিক্যাল সিস্টেমে চ্যালেঞ্জ এবং সাম্প্রতিক সমাধান", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং এর সহযোগী অধ্যাপক, এনআইটি সিকিম" },
-          { time: "সকাল ১১:৪৫ - দুপুর ১২:৪৫", topic: "প্রফেসর সংখায়ন চৌধুরী - কন্টেইনার ইকোসিস্টেম বোঝা", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং, সিইউ" },
-          { time: "দুপুর ২:১৫ - ৩:১৫", topic: "ডঃ তনুশ্যাম চট্টোপাধ্যায় - সাইবার ফিজিক্যাল সিস্টেমের উন্নয়ন", speaker: "ইন্টারন্যাশনাল লিমিটেড লাইভ অ্যাড্রেস জুমের মাধ্যমে" },
-          { time: "বিকাল ৪:০০ - ৫:৩০", topic: "ডঃ দেবাশিস গিরি - এমএল ব্যবহার করে মাইনিং অ্যাটাক ডিটেকশনের জন্য একটি প্রেডিক্টিভ মডেল", speaker: "তথ্য প্রযুক্তি বিভাগ, মৌলানা আবুল কালাম আজাদ প্রযুক্তি বিশ্ববিদ্যালয়" }
+          { time: "সকাল ৯:০০ - ৯:৪৫", topic: "নিবন্ধন এবং হাই টি", speaker: "" },
+          { time: "সকাল ৯:৪৫ - ১০:০০", topic: "উদ্বোধনী", speaker: "" },
+          { time: "সকাল ১০:০০ - ১১:০০", topic: "সাইবার নিরাপত্তায় চ্যালেঞ্জ এবং সাম্প্রতিক সমাধান ডঃ সংগ্রাম রায় দ্বারা", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং এর সহযোগী অধ্যাপক, এনআইটি সিকিম" },
+          { time: "সকাল ১১:৪৫ - দুপুর ১২:৪৫", topic: "সুপারিশ চ্যালেঞ্জ: গ্রাহকের উপলব্ধি প্রফেসর সংখায়ন চৌধুরী দ্বারা", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং, সিইউ" },
+          { time: "দুপুর ১:১৫ - ২:১৫", topic: "দুপুরের খাবার বিরতি", speaker: "" },
+          { time: "দুপুর ২:১৫ - ৩:১৫", topic: "ইন্ডাস্ট্রিয়াল এআই: সাইবার ফিজিক্যাল সিস্টেমের ইন্ডাস্ট্রিয়াল স্থাপনা ডঃ তনুশ্যাম চট্টোপাধ্যায় দ্বারা", speaker: "ইন্টারন্যাশনাল লিমিটেড লাইভ অ্যাড্রেস জুমের মাধ্যমে" },
+          { time: "বিকাল ৪:০০ - ৫:৩০", topic: "এমএল ব্যবহার করে মাইনিং অ্যাটাক সনাক্তকরণের জন্য একটি প্রেডিকশন মডেল ডঃ দেবাশিস গিরি দ্বারা", speaker: "তথ্য প্রযুক্তি বিভাগ, মৌলানা আবুল কালাম আজাদ প্রযুক্তি বিশ্ববিদ্যালয়" },
+          { time: "বিকাল ৫:৩০ - ৫:৪৫", topic: "নাস্তা এবং চা বিরতি", speaker: "" }
         ]
       },
       day2: {
         title: "দ্বিতীয় দিন",
         sessions: [
-          { time: "সকাল ১০:০০ - ১১:০০", topic: "ডঃ অরূপ কুমার পাল - নিরাপদ ভিডিও নজরদারি", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং এর সহযোগী অধ্যাপক, আইআইটি (আইএসএম) ধানবাদ" },
-          { time: "সকাল ১১:৪৫ - দুপুর ১২:৪৫", topic: "শ্রী কৌশিক মাইতি - নিরাপদ বুদ্ধিমত্তা এবং বিদ্যমান চ্যালেঞ্জ", speaker: "উন্নত কম্পিউটিং উন্নয়ন কেন্দ্রের বিজ্ঞানী স্তরের পরিচালক" },
-          { time: "দুপুর ২:১৫ - ৩:১৫", topic: "ডঃ দক্ষিণা রঞ্জন কিস্কু - সাইবার ফিজিক্যাল সিস্টেমে স্বাস্থ্যসেবা", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং এর সহযোগী অধ্যাপক, এনআইটি দুর্গাপুর" },
-          { time: "বিকাল ৪:০০ - ৫:৩০", topic: "শ্রী অনুপ মণ্ডল - এআই চালিত অনুপ্রবেশ সনাক্তকরণ সিস্টেম: সিডিজি", speaker: "ভার্সন ১-এর সফটওয়্যার ডেভেলপার" }
+          { time: "সকাল ৯:০০ - ৯:৪৫", topic: "নিবন্ধন এবং হাই টি", speaker: "" },
+          { time: "সকাল ৯:৪৫ - ১০:০০", topic: "উদ্বোধনী", speaker: "" },
+          { time: "সকাল ১০:০০ - ১১:০০", topic: "নিরাপদ ভিডিও নজরদারি সিস্টেম ডঃ অরূপ কুমার পাল দ্বারা", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং এর সহযোগী অধ্যাপক, আইআইটি (আইএসএম) ধানবাদ" },
+          { time: "সকাল ১১:৪৫ - দুপুর ১২:৪৫", topic: "থ্রেট ইন্টেলিজেন্স এবং হান্টিং ফান্ডামেন্টাল শ্রী কৌশিক মাইতি দ্বারা", speaker: "উন্নত কম্পিউটিং উন্নয়ন কেন্দ্রের বিজ্ঞানী স্তরের পরিচালক" },
+          { time: "দুপুর ১:১৫ - ২:১৫", topic: "দুপুরের খাবার বিরতি", speaker: "" },
+          { time: "দুপুর ২:১৫ - ৩:১৫", topic: "সাইবার ফিজিক্যাল সিস্টেমে স্বাস্থ্যসেবা ডঃ দক্ষিণা রঞ্জন কিস্কু দ্বারা", speaker: "কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং এর সহযোগী অধ্যাপক, এনআইটি দুর্গাপুর" },
+          { time: "বিকাল ৪:০০ - ৫:৩০", topic: "সিপিএসে এআই চালিত অনুপ্রবেশ সনাক্তকরণ সিস্টেম শ্রী অনুপ মণ্ডল দ্বারা", speaker: "ভার্সন ১-এর সফটওয়্যার ডেভেলপার" },
+          { time: "বিকাল ৫:৩০ - ৫:৪৫", topic: "নাস্তা এবং চা বিরতি", speaker: "" }
         ]
       }
     },
