@@ -19,6 +19,28 @@ const Index = () => {
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const currentContent = content[language];
 
+  // Function to highlight speaker names in topics
+  const highlightSpeakerNames = (text: string) => {
+    const speakerNames = [
+      'Dr. Sangram Ray',
+      'Prof. Sankhayan Choudhury', 
+      'Dr. Tanushyam Chattopadhyay',
+      'Dr. Debasish Giri',
+      'Dr. Arup Kumar Pal',
+      'Mr. Kousik Maiti',
+      'Dr. Dakshina Ranjan Kisku',
+      'Mr. Anup Mondal'
+    ];
+
+    let highlightedText = text;
+    speakerNames.forEach(name => {
+      const regex = new RegExp(`(${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      highlightedText = highlightedText.replace(regex, '<mark class="bg-primary/20 text-primary font-bold px-1 rounded">$1</mark>');
+    });
+
+    return highlightedText;
+  };
+
   const handleLanguageChange = (lang: 'en' | 'bn') => {
     setLanguage(lang);
   };
@@ -343,7 +365,7 @@ const Index = () => {
                             <Clock className="w-5 h-5 text-primary mr-3" />
                             <span className="font-bold text-sm bg-primary text-primary-foreground px-3 py-1 rounded-full">{session.time}</span>
                           </div>
-                          <h4 className="font-bold mb-2 text-lg">{session.topic}</h4>
+                          <h4 className="font-bold mb-2 text-lg" dangerouslySetInnerHTML={{ __html: highlightSpeakerNames(session.topic) }}></h4>
                           <p className="text-muted-foreground">{session.speaker}</p>
                         </div>
                       ))}
@@ -374,7 +396,7 @@ const Index = () => {
                             <Clock className="w-5 h-5 text-accent mr-3" />
                             <span className="font-bold text-sm bg-accent text-accent-foreground px-3 py-1 rounded-full">{session.time}</span>
                           </div>
-                          <h4 className="font-bold mb-2 text-lg">{session.topic}</h4>
+                          <h4 className="font-bold mb-2 text-lg" dangerouslySetInnerHTML={{ __html: highlightSpeakerNames(session.topic) }}></h4>
                           <p className="text-muted-foreground">{session.speaker}</p>
                         </div>
                       ))}
